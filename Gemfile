@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gemspec
 
 ACTIVE_ADMIN_PATH = File.dirname(__FILE__) unless defined?(ACTIVE_ADMIN_PATH)
@@ -20,6 +19,10 @@ gem 'cancan'
 gem 'devise'
 gem 'draper'
 gem 'pundit'
+
+gem RUBY_ENGINE =~ /jruby/ ? 'activerecord-jdbcsqlite3-adapter' : 'sqlite3'
+
+gem 'rubysl' if RUBY_ENGINE =~ /rbx/
 
 group :development do
   # Debugging
@@ -50,6 +53,6 @@ group :test do
   gem 'parallel_tests'
   gem 'rails-i18n' # Provides default i18n for many languages
   gem 'rspec-rails'
+  gem 'rubinius-coverage' if RUBY_ENGINE =~ /rbx/ # colszowka/simplecov#250
   gem 'shoulda-matchers'
-  gem 'sqlite3'
 end

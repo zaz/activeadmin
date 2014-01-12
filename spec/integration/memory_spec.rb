@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "Memory Leak" do
+  JRuby.objectspace = true if RUBY_ENGINE =~ /jruby/
 
   def count_instances_of(klass)
     ObjectSpace.each_object(klass) { }
