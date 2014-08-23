@@ -59,7 +59,6 @@ module ActiveAdmin
           col # column for row headers
           @collection.each do |record|
             classes = Arbre::HTML::ClassList.new
-            classes << cycle(:even, :odd, name: self.class.to_s)
             classes << dom_class_name_for(record)
             col(id: dom_id_for(record), class: classes)
           end

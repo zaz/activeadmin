@@ -192,12 +192,6 @@ describe ActiveAdmin::Views::AttributesTable do
             expect(col.class_names).to include("post")
           end
         end
-
-        it "assigns alternation classes to each col" do
-          cols[1..-1].each_with_index do |col, index|
-            expect(col.class_names).to include(["even", "odd"][index % 2])
-          end
-        end
       end
 
       context "when rendering the rows" do

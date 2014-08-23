@@ -209,9 +209,9 @@ describe ActiveAdmin::Views::TableFor do
         trs = table.find_by_tag('tr')
         expect(trs.size).to eq 4
         expect(trs.first.class_list.to_a.join(' ')).to eq ''
-        expect(trs.second.class_list.to_a.join(' ')).to eq 'odd starred'
-        expect(trs.third.class_list.to_a.join(' ')).to eq 'even'
-        expect(trs.fourth.class_list.to_a.join(' ')).to eq 'odd'
+        expect(trs.second.class_list.to_a.join(' ')).to eq 'starred'
+        expect(trs.third.class_list.to_a.join(' ')).to eq ''
+        expect(trs.fourth.class_list.to_a.join(' ')).to eq ''
       end
     end
 

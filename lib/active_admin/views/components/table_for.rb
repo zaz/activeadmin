@@ -78,13 +78,8 @@ module ActiveAdmin
         @tbody = tbody do
           # Build enough rows for our collection
           @collection.each do |elem|
-            classes = [cycle('odd', 'even')]
-
-            if @row_class
-              classes << @row_class.call(elem)
-            end
-
-            tr(class: classes.flatten.join(' '), id: dom_id_for(elem))
+            classes = [ @row_class.call(elem) ].flatten.join(' ') if @row_class
+            tr(class: classes, id: dom_id_for(elem))
           end
         end
       end

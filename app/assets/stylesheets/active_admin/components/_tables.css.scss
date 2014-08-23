@@ -47,7 +47,7 @@ table.index_table {
 
   }
 
-  tr.even td { background: $table-stripe-color; }
+  tr:nth-child(even) td { background: $table-stripe-color; }
 
   tr.selected td {
     background: $table-selected-color;
@@ -73,16 +73,16 @@ table.index_table {
     text-transform: uppercase;
     border-bottom: 1px solid #ccc;
   }
-  tr.odd td { background: darken($table-stripe-color, 3%); }
-  tr.even td { background: $table-stripe-color; }
+  tr:nth-child(odd) td { background: darken($table-stripe-color, 3%); }
+  tr:nth-child(even) td { background: $table-stripe-color; }
 }
 
 // -------------------------------------- Resource Attributes Table
 .attributes_table { overflow: hidden; }
 
 .attributes_table table {
-  col.even { background: $table-stripe-color; }
-  col.odd  { background: darken($table-stripe-color, 3%); }
+  col:nth-child(even) { background: $table-stripe-color; }
+  col:nth-child(odd)  { background: darken($table-stripe-color, 3%); }
   th, td {
     padding: 8px $cell-horizontal-padding 6px $cell-horizontal-padding;
     vertical-align: top;
